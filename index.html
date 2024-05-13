@@ -17,12 +17,18 @@ font-family:'Consolas';
   <br>
   <br>
   
-<h1>ПЕРЕНАПРАВЛЯЮ НА САЙТ...</h1>
+<h1 id="text" >ПЕРЕНАПРАВЛЯЮ НА САЙТ...</h1>
 <script>
   function redirectS()
     {
       window.open("http://dimaxp.sytes.net");
     }
+ var fr = document.getElementById("text");
+  fr.click();
+  fr.onclick = function()
+    {
+      
 setTimeout("redirectS();",1);
+    }
            </script>
 </html>
