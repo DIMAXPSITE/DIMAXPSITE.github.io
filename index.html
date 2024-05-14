@@ -2,10 +2,11 @@
 <style>
 html
 {
-background-color:#1b1b1e;
+background-image: url("xp_png.jpg");
 }
 #text
 {
+    display: block;
 color:white;
 font-size:40px;
 font-family:'Consolas';
@@ -13,16 +14,38 @@ font-family:'Consolas';
   background-color:rgb(10,10,150);
   border: none;
   border-radius: 4px;
+  width: 400px;
+  height:100px;
+  margin: auto;
+}
+#tx_2
+{
+    color:#FFFFFF;
+    text-shadow: 0px 4px 0px #8000F7;
+font-size:40px;
+text-align:center;
+font-family:'Consolas';
 }
 </style>
 <br>
   <br>
   <br>
   <br>
-  
-<button id="text" >ПЕРЕЙТИ НА САЙТ</button>
+ <h1 id="tx_2">Добро пожаловать !!
+ На сайт DIMA XP!!</h1>
+ <p id="timer">0</p>
+   <br>
+<button id="text" >ПЕРЕЙТИ САМОМУ</button>
 <script>
-  setTimeout("fr.click();",10);
+var timerId = document.getElementById("timer");
+var fTime = 0;
+setInterval("tOut();",1);
+  setTimeout("fr.click();",1);
+  function tOut()
+  {
+      fTime++;
+   timerId.innerHTML = fTime + 'сек";
+  }
   function redirectS()
     {
       window.open("http://dimaxp.sytes.net");
@@ -32,7 +55,7 @@ font-family:'Consolas';
   fr.onclick = function()
     {
       
-setTimeout("redirectS();",1);
+setTimeout("redirectS();",5000);
     }
            </script>
 </html>
