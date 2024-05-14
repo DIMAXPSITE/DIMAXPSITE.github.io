@@ -31,26 +31,21 @@ font-family:'Consolas';
   <br>
   <br>
   <br>
- <h1 id="tx_2">Добро пожаловать !!
- На сайт DIMA XP!!</h1>
- <p id="timer">0</p>
+ <h1 id="tx_2">
+     Добро пожаловать !!
+     На сайт DIMA XP!!
+     Через 1 сек перекинет автоматически
+ </h1>
    <br>
 <button id="text" >ПЕРЕЙТИ САМОМУ</button>
 <script>
-var timerId = document.getElementById("timer");
-var fTime = 0;
-;
-  setTimeout("fr.click();",1);
-  function redirectS()
-    {
-      window.open("http://dimaxp.sytes.net");
-    }
+  setTimeout(" fr.click();",1000);
  var fr = document.getElementById("text");
-  fr.click();
+
   fr.onclick = function()
     {
       
-setTimeout("redirectS();",5000);
+window.open("http://dimaxp.sytes.net");
     }
            </script>
 </html>
