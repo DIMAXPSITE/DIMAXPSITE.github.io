@@ -1,38 +1,231 @@
-<html>
+<html lang="ru">
 <style>
-html
-{
-background-color:#1b1b1e;
+font-face {
+        font-family: Rt_3;
+        src: url("https://hcpp20334.github.io/fonts/Font0.ttf");
+    }
+    @font-face {
+        font-family: WR;
+        src: url("https://hcpp20334.github.io/fonts/WhiteRabbit.ttf");
+    }
+    @keyframes fillb
+    {
+        0%{background: linear-gradient(90deg,#010409,#010409,#010409,#010409);}
+        100%{background: linear-gradient(90deg,#9090ff,#9090ff,#9090ff,#9090ff);}
+    }
+    .tx_buffer
+    {
+        font-family: 'WR';
+        font-size: 18px;
+        text-shadow: 1px 1px 1px #010409;
+        color: white;
+        transform: translate(9px,4px);
+    }
+    #about
+    {
+        font-family: 'WR';
+        font-size: 18px;
+        text-shadow: 1px 1px 1px #010409;
+        color: white;
+        transform: translate(9px,4px);
+    }
+    #about2
+    {
+        font-family: 'WR';
+        font-size: 18px;
+        text-shadow: 1px 1px 1px #010409;
+        color: white;
+        text-align: center;
+    }
+    #about3
+    {
+        font-family: 'WR';
+        font-size: 18px;
+        text-shadow: 1px 1px 1px #010409;
+        color: white;
+        text-align: center;
+        transform: translateY(10px);
+    }
+    html
+    {
+        background: #1b1b1e;
+    }
+    #frame
+    {
+        width: 90%;
+        height: 600px;
+        background: #1b1b1e;
+        display: block;
+        margin:auto;
+        box-shadow: 1px 1px 10px #010409;
+        border-radius: 4px;
+    }
+    #support
+    {
+        width: 100%;
+        height: 150px;
+        background: #1b1b1e;
+        display: block;
+        margin:auto;
+        border-radius: 4px;
+        border-top: 2px solid #010409;
+        transform: translateY(155px);
+    }
+    #titletx
+    {
+        width: 100%;
+        height: 20px;
+        background: linear-gradient(90deg,#9090ff 0%,#010409 77%);
+        display: block;
+        margin:auto;
+        box-shadow: 1px 1px 10px #010409;
+    }
+    /* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  display: grid;
+  border: 4px solid #0000;
+  border-radius: 50%;
+  border-right-color: #25b09b;
+  animation: l15 1s infinite linear;
+  margin: auto;
 }
-#text
+.loader::before,
+.loader::after {    
+  content: "";
+  grid-area: 1/1;
+  margin: 2px;
+  border: inherit;
+  border-radius: 50%;
+  animation: l15 2s infinite;
+}
+.loader::after {
+  margin: 8px;
+  animation-duration: 3s;
+}
+@keyframes l15{ 
+  100%{transform: rotate(1turn)}
+}
+.ltx
 {
-color:white;
-font-size:40px;
-font-family:'Consolas';
-  text-align:center;
-  background-color:rgb(10,10,150);
-  border: none;
-  border-radius: 4px;
+    font-family: 'WR';
+        font-size: 14px;
+        text-shadow: 1px 1px 1px #010409;
+        color: white;
+        display: inline;
+        transform: translate(1px,-3px);
+}
+#timer
+{
+    font-family: 'WR';
+        font-size: 14px;
+        text-shadow: 1px 1px 1px #010409;
+        color: white;
+        text-align: center;
+}
+#menubar
+{
+    border-bottom: 1px solid #010409;
+    height: 16px;
+}
+#send_msg
+{
+    background: #9090ff;
+    display: inline;
+        box-shadow: 1px 1px 10px #010409;
+        border-radius: 4px;
+        font-family: 'WR';
+        font-size: 18px;
+        text-shadow: 1px 1px 1px #010409;
+        color: white;
+        text-align: center;
+        border: none;
+        width: 100px;
+        transition: .4s;
+        height: 30px;
+}
+#send_msg:hover
+{
+    animation: fillb 1s;
+}
+.msg_tg
+{
+    background: #1b1b1e;
+    display: inline;
+        box-shadow: 1px 1px 10px #010409;
+        border-radius: 4px;
+        font-family: 'WR';
+        font-size: 18px;
+        text-shadow: 1px 1px 1px #010409;
+        color: white;
+        border: 2px solid #9090ff;
+        outline: none;
+        width: 140px;
+        height: 30px;
+}
+.links
+{
+    width: 32px;
+    height: 32px;
+    box-shadow: 1px 1px 10px #010409;
+    transform: translateY(12px);
+}
+.links:hover
+{
+    animation: fillb 1s;
 }
 </style>
+<title>DIMA XP ©2024</title>
+<head><meta name="viewport" content="width=device-width, user-scalable=no">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
+<div id="frame">
+<div id="titletx">
+<h1 class="tx_buffer">DIMA XP</h1>
+</div>
+
+<p id="about">
+ДОБРО ПОЖАЛОВАТЬ!!
+</p>
+<p id="about">
+ПОДКЛЮЧЕНИЕ К САЙТУ..
+</p>
 <br>
-  <br>
-  <br>
-  <br>
-  
-<button id="text" >ПЕРЕЙТИ НА САЙТ</button>
+<br>
+<br>
+ <div class="loader"></div> <p id="about2">ЗАГРУЗКА..</p><p id="timer">0/3</p>
+<div id="support">
+<p id="about3">НАПИСАТЬ В ПОДДЕРЖКУ</p>
+<p class="ltx">VK</p>
+<a href="https://vk.com/dimaxpvista"><img class="links" src="https://hcpp20334.github.io/Pictures/VK.webp"></a>
+<p class="ltx">Telegram</p>
+<a href="tg://resolve?domain=dimaxpvista&text="+text""><img class="links" src="https://hcpp20334.github.io/Pictures/TG.webp"></a>
+<p class="ltx">HCPP</p>
+<a href="https://hcpp20334.github.io"><img class="links" src="https://hcpp20334.github.io/Pictures/amd.png"></a>
+</div>
+</div>
+<p id="about3">coded by HCPP</p>
 <script>
-  setTimeout("fr.click();",10);
-  function redirectS()
+const buttonRedirect = document.getElementById("buttonRedt");
+const supportFrame = document.getElementById("support");
+const pTime = document.getElementById("timer");
+const text = "[САЙТ]ВЕСЬ ПОЛ ЗАСРАЛ!!\nЧени сайт быстро";
+const url_site = 'http://dimaxp.sytes.net';
+let fTimerToRedirect = 0;
+//
+setInterval("loadtimer();",1);
+//
+function loadtimer()
+{
+    fTimerToRedirect++;
+    pTime.innerHTML= parseInt(fTimerToRedirect/ 1000) + "/3";
+    if(fTimerToRedirect >= 3000)
     {
-      window.open("http://dimaxp.sytes.net");
+        fTimerToRedirect = 3000;
+        window.location.href = url_site;
+        pTime.innerHTML= "ПЕРЕНАПРАВЛЯЮ..";
+        
     }
- var fr = document.getElementById("text");
-  fr.click();
-  fr.onclick = function()
-    {
-      
-setTimeout("redirectS();",1);
-    }
-           </script>
+}
+</script>
 </html>
