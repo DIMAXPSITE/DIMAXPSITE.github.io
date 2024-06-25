@@ -212,13 +212,14 @@ const buttonRedirect = document.getElementById("buttonRedt");
 const supportFrame = document.getElementById("support");
 const pTime = document.getElementById("timer");
 const text = "[САЙТ]ВЕСЬ ПОЛ ЗАСРАЛ!!\nЧени сайт быстро";
-const url_site = 'http://dimaxp.sytes.net';
+const url_site = 'http://dimaxp.sytes.net/kalkulyator-watt-v-amper-i-obratno/';
 let fTimerToRedirect = 0;
 //
-setTimeout("chkst()",1);
+setInterval("loadtimer()",1);
 //
 function loadtimer()
 {
+    //chkst();
     fTimerToRedirect++;
     pTime.innerHTML= parseInt(fTimerToRedirect/ 1000) + "/3";
     if(fTimerToRedirect >= 3000)
@@ -231,16 +232,15 @@ function loadtimer()
 }
 function chkst()
 {
-var jqxhr = $.get(url_site, function() {
-  setInterval("loadtimer()",1);
-})
-  .fail(function() {
-    pTime.innerHTML= "ОШИБКА ПОДКЛЮЧЕНИЯ";
-  })
-}
-if(window.jQuery)
-{
-
+fetch(url_site)
+.then(response => {
+    if (response.ok) {
+      setInterval("loadtimer()",1);
+      console.log("ok");
+    } else {
+    pTime.innerHTML= `ОШИБКА ПОДКЛЮЧЕНИЯ: ${response.status}`;
+    }
+  });
 }
 </script>
 </html>
