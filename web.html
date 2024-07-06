@@ -4,12 +4,43 @@ html
 {
 background-color: #010409;
 }
-        
+        @font-face {
+        font-family: WR;
+        src: url("https://hcpp20334.github.io/fonts/WhiteRabbit.ttf");
+    }
     iframe
     {
-        width: 100%;height: 100%;
+        width: 100%;height: 99%;
     }
+    #reload
+    {
+        background: transparent;
+        width: 32px;
+        height: 32px;
+        color:white;
+        font-size: 30px;
+        transform: translateY(-25px);
+        transition: .4s;
+            &:hover
+            {
+                color:#ff0050;
+            }
+    }
+    #tx
+    {
+        color:white;
+        font-size: 30px;
+        font-family: 'WR';
+                transform: translate(50px,-75px);
+    }
+#content_frame
+{
+    border: 1px solid white;
+    width: 100%;
+    border-radius:4px;
+    height: 32px;
+}
 </style>
+
 <iframe src="http://dimaxp.sytes.net"></iframe>
-<script></script>
 </html>
