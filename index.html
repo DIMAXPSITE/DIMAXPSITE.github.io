@@ -5,6 +5,7 @@ html
     background: #1b1b1e;
     background-image: url("anime.webp");
     animation: gradient 4s ease infinite;
+    transition: .4s;
 }
 @keyframes gradient {
 	0% {
@@ -208,13 +209,28 @@ transform: translateX(100px);
 }
 </style>
 <head>
-<script src="https://hcpp20334.github.io/Engine/PWEngine.js">
-    let pwU = new GUI_FUNC();
-    pwU.bulid;
-    pwU.alert("PWEngine loaded");
+<script async="" src="https://hcpp20334.github.io/Engine/PWEngine.js">
 </script>
+
 </head>
->    <head><meta name="viewport" content="width=device-width, user-scalable=no">
+  <head>
+      <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(97975152, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/97975152" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+     <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 <div id="loader">
 <p class="text2">
@@ -254,12 +270,15 @@ Doljno poluchitsa 7
     <br>
             <br>
     <br>
-<p class="text">PWEngine build 0.5</p>
+<p class="text">used technologies</p>
+<p class="text"><a href="https://github.com/hcpp20334/PWEngine">PWEngine</a> | Yandex metrica</p>
+<p class="text">coded by HCPP STUDIO</p>
 </div>
 <script>
 let fGUI = new GUI_FUNC();
 let fGUIMEM = new memory_api();
 //
+
 let Load0 = fGUI.pw.getElementById("bar");
 let fPoint = 0;
 let buf;
@@ -296,8 +315,34 @@ rds.onclick = function(){
           msgFrams.style.display = "none";}}}
 
 }
+var  bStrSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_123456789";
+ var buffer = '';
+ let fch_count = 0;
+ var randName;
+ var fPassOut = '';
+function PassGen(limit_str)
+{
+    for(var Chunk_0 = 1;Chunk_0 <=limit_str; Chunk_0++)
+    {
+        fch_count++;
+        fPassOut += bStrSymbols.charAt(Math.floor(Math.random() * 63));
+        if(fch_count > 43)
+        {
+            fPassOut += '\n';
+            fch_count = 0;
+        }
+    }
+    return fPassOut;
+}
+let ssw = btoa(PassGen(12));
+let ipw = 0;
+let cnt = 0;
 let ipmsg = fGUI.pw.getElementById("iptx");
-findIP(ip => ipmsg.innerHTML = "ip:"+ip);
+findIP(ip => ipmsg.innerHTML = "ip:"+ip + "\n RAY:"+ssw+"\n device:"+GDevice());
+function ipd(h){
+    ipw = h;
+}
+findIP(ip => ipd(ip));
 function findIP(onNewIP) {
     var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
     var pc = new myPeerConnection({
