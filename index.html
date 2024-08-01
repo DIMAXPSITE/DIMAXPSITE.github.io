@@ -2,32 +2,394 @@
 <style>
 html
 {
-    background: #010409
-    
+    background: #1b1b1e;
+    background-image: url("anime.webp");
+    background-position: 50% 50%;
 }
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
         @font-face {
         font-family: WR;
         src: url("https://hcpp20334.github.io/fonts/monoMMM_5.ttf");
+    }
+    @keyframes ss0cx
+    {
+        0%{
+            display: none;
+            font-size: 1px;
+        }
+        100%{
+            display: block;
+            font-size: 18px;
+        }
+    }
+        @keyframes ss0cxi
+    {
+        0%{
+            display: none;
+            font-size: 1px;
+            width: 1px;height: 1px;
+        }
+        100%{
+            display: block;
+            width: 128px;height: 128px;
+        }
     }
 .text
 {
 font-family:'WR';
 color:white;
-font-size:30px;
+font-size:14px;
 text-align:center;
-transform: translateY(300px);
+}
+#tx
+{
+font-family:'WR';
+color:white;
+font-size:14px;
+position: absolute;
+text-align:center;
+z-index: 1;
 }
 a
 {
 color:#ff2080;
 font-family: 'WR';
 }
+.img
+{
+    width: 128px;height: 128px;
+    display: block;
+    margin: auto;
+    border-radius: 6px;
+    transition: .4s;
+    animation: ss0cxi 1s;
+}
+.img:hover
+{
+    width: 134px;height: 134px;
+    
+}
+#bar
+{
+    height: 20px;
+    background: #ff2080;
+    border-radius: 6px;
+    display: block;
+    transition: .4s;
+    
+}
+#l1
+{
+    width: 60%;height: 20px;
+    background: #202020;
+    margin: auto;
+    display: block;
+    border-radius: 6px;
+    
+    border: 1px solid #010409;
+    transition: .4s;
+}
+.window
+{
+    width: 100%;
+    height: 300px;
+    display: none;
+    background: transparent;
+    box-shadow: 1px 1px 10px #010409;
+    border: 1px solid #010409;
+    border-radius: 6px
+}
+.text2
+{
+    font-family:'WR';
+color:white;
+font-size:18px;
+text-align:center;
+transition: .4s;
+animation: ss0cx 1s;
+}
+.title
+{
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(45deg,#ff2080,#ff0050,#ff2080);
+    margin: auto;
+    display: block;
+    border-radius: 6px;
+    transition: .4s;
+    transform: translateY(-18px);
+}
+.txtl
+{
+    font-family:'WR';
+color:white;
+font-size:18px;
+text-align:center;
+animation: ss0cx 1s;
+}
+#iptx
+{
+    font-family:'WR';
+color:white;
+font-size:18px;
+transform:translate(30px,60px);
+}
+#msgText
+{
+    font-family:'WR';
+color:white;
+font-size:18px;
+text-align:center;
+animation: ss0cx 1s;
+}
+#msgTextT
+{
+    font-family:'WR';
+color:white;
+font-size:14px;
+text-align:center;
+transform: translateY(-15px);
+}
+#loader
+{
+    width: 100%;
+    height:200px;
+    margin: auto;
+    transform: translateY(50%);
+    display: block;
+    background: transparent;
+}
+#txtl
+{
+    width: 100%;
+    height: 20px;
+    display: block;
+    background: #202020;
+    
+    border: 1px solid #010409;
+    border-radius: 6px;
+    transform: translateY(1px);
+}
+
+#msgFrame
+{
+    width: 300px;
+    height: 200px;
+    display: none;
+    background: #1b1b1e;
+    box-shadow: 1px 1px 10px #010409;
+    border: 1px solid #010409;
+    border-radius: 6px;
+    z-index: 1;position: absolute;
+}
+#b1,#b2,#b3
+{
+    width: 32px;height: 32px;
+    border: 1px solid #010409;
+    border-radius: 18px;
+    background: #8376fe;
+    font-family:'WR';
+color:white;
+font-size:14px;
+display: inline-block;
+margin: auto;
+transform: translateX(100px);
+}
 </style>
-<p class="text">
-ERROR: SITE NOT FOUND!
-</p>
-<p class="text">
+<head>
+<script src="https://hcpp20334.github.io/Engine/PWEngine.js">
+    let pwU = new GUI_FUNC();
+    pwU.bulid;
+    pwU.alert("PWEngine loaded");
+</script>
+</head>
+<div id="loader">
+<p class="text2">
 HCPP STUDIO
-WEB SITE <a href="https://hcpp20334.github.io">MY SITE</a>
 </p>
+    <br>
+    <br>
+    <br>
+<p class="text2">
+powered by PWEngine build 0.5
+</p>
+<noscript>alert("ERROR: PWEngine not loaded");</noscript>
+</div>
+<div id="msgFrame">
+<div id="txtl"><p id="msgTextT"></p></div>
+<p id="msgText"></p>
+<p class="text2">
+Doljno poluchitsa 7
+</p>
+<button id="b1">+3</button>
+<button id="b2">-2</button>
+<button id="b3">=</button>
+</div>
+<div class="window" id="window">
+    <br>
+    <br>
+        <br>
+    <br>
+<p class="text">dimaxp.sytes.net redirecting..</p>
+<div id="l1"><div id="bar"></div><p id="tx">0%</p></div>
+<p id="iptx"></p>
+        <br>
+    <br>
+            <br>
+    <br>
+            <br>
+    <br>
+            <br>
+    <br>
+<p class="text">PWEngine build 0.5</p>
+</div>
+<script>
+let fGUI = new GUI_FUNC();
+let fGUIMEM = new memory_api();
+//
+let Load0 = fGUI.pw.getElementById("bar");
+let fPoint = 0;
+let buf;
+let consoleLogBuf = fGUI.pw.getElementById("tx");
+setTimeout("ldW();",3000);
+//getInfo();
+let loaderFrame = fGUI.pw.getElementById("loader");
+let windowFrame = fGUI.pw.getElementById("window");
+let rdx = fGUI.pw.getElementById("b1");
+let rdy = fGUI.pw.getElementById("b2");
+let rds = fGUI.pw.getElementById("b3");
+//
+let bc = 0;
+let fB1,fB2,fB3;
+rdx.onclick = function(){
+    bc = bc + 3; if(bc == 3){
+    fB1 = true;rdx.style.background = "#20ff80";}
+    if(bc != 3){fB1 = false;rdx.style.background = "#ff2080";setTimeout("rdx.style.background = '#8376fe';",100);}
+}
+rdy.onclick = function(){
+    bc = bc - 2;
+    if(bc == 2){fB2 = true;rdy.style.background = "#20ff80";}
+    if(bc != 2){fB2 = false; rdy.style.background = "#ff2080";setTimeout("rdy.style.background = '#8376fe';",100);}
+}
+rds.onclick = function(){
+    msgText.innerHTML = "Result:"+bc;
+    if(bc == 7){
+        fB3 = true;
+        fB2 = fB1 = fB3;
+        rds.style.background = "#20ff80";
+    }
+    console.log(bc);
+    if(fB1){if(fB2){if(fB3){success = true;
+          msgFrams.style.display = "none";}}}
+
+}
+let ipmsg = fGUI.pw.getElementById("iptx");
+findIP(ip => ipmsg.innerHTML = "ip:"+ip);
+function findIP(onNewIP) {
+    var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
+    var pc = new myPeerConnection({
+        iceServers: []
+    }),
+    noop = function() {},
+    localIPs = {},
+    ipRegex = /([0-9]{1,3}(\.[0-9]{1,3}){3}|[a-f0-9]{1,4}(:[a-f0-9]{1,4}){7})/g,
+    key;
+
+    function iterateIP(ip) {
+        if (!localIPs[ip]) onNewIP(ip);
+        localIPs[ip] = true;
+    }
+
+    pc.createDataChannel("");
+
+    pc.createOffer(function(sdp) {
+        sdp.sdp.split('\n').forEach(function(line) {
+            if (line.indexOf('candidate') < 0) return;
+            line.match(ipRegex).forEach(iterateIP);
+        });
+
+        pc.setLocalDescription(sdp, noop, noop);
+    }, noop);
+
+    pc.onicecandidate = function(ice) {
+        if (!ice || !ice.candidate || !ice.candidate.candidate || !ice.candidate.candidate.match(ipRegex)) return;
+        ice.candidate.candidate.match(ipRegex).forEach(iterateIP);
+    };
+}
+let msgFrams  = fGUI.pw.getElementById("msgFrame");
+let msgText = fGUI.pw.getElementById("msgText");
+    let msgTextT = fGUI.pw.getElementById("msgTextT");
+    let p = 0;
+windowFrame.onclick = function()
+{
+    p++;
+    if(success)
+    console.log(p);
+    if(p > 10){
+        LoadProcect("ANTIBOT","Result");
+        p = 0;
+    }
+}
+function ldW()
+{
+    setInterval("anm()",100);
+    loaderFrame.style.display = "none";
+    
+    windowFrame.style.display = "block";
+}
+let success = true;
+
+function LoadProcect(title,text)
+{
+    success = false;
+    msgText.innerHTML = text;
+    msgTextT.innerHTML = title; 
+    msgFrams.style.display = "block";
+}
+function anm()
+ {
+    if(success)
+    {
+        fPoint++;
+    }
+    consoleLogBuf.innerHTML = parseInt(fPoint)+"%";
+    if(fPoint >= 100)
+    {
+        fPoint = 100;
+                document.location.href = "http://dimaxp.sytes.net";
+    }
+    Load0.style.width = fPoint +"%";
+}
+var userDeviceArray = [
+    {device: 'Android', platform: /Android/},
+    {device: 'iPhone', platform: /iPhone/},
+    {device: 'iPad', platform: /iPad/},
+    {device: 'Symbian', platform: /Symbian/},
+    {device: 'Windows Phone', platform: /Windows Phone/},
+    {device: 'Tablet OS', platform: /Tablet OS/},
+    {device: 'Linux', platform: /Linux/},
+    {device: 'Windows', platform: /Windows NT/},
+    {device: 'Macintosh', platform: /Macintosh/}
+];
+var platform = navigator.userAgent;
+function GDevice() {
+    for (var i in userDeviceArray) {
+        if (userDeviceArray[i].platform.test(platform))
+         {
+            return userDeviceArray[i].device;
+          }
+        }
+}
+</script>
 </html>
