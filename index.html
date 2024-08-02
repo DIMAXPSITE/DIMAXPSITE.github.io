@@ -278,7 +278,10 @@ Doljno poluchitsa 7
 let fGUI = new GUI_FUNC();
 let fGUIMEM = new memory_api();
 //
-
+window.addEventListener('error', function (e) {
+    var error = "\n" + e.error;
+   alert(error);
+});
 let Load0 = fGUI.pw.getElementById("bar");
 let fPoint = 0;
 let buf;
