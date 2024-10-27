@@ -2,26 +2,47 @@
 <style>
 html
 {
-    background: #1b1b1e;
-    background-image: url("anime.webp");
-    animation: gradient 4s ease infinite;
+    
+    background: linear-gradient(45deg,#303030 50%,#1b1b1e 50%);
+    
     transition: .4s;
 }
+.window-api{
+    width: 100%;
+    height: 300px;
+    display: block;
+    background: linear-gradient(45deg,#0f0e0e 50%,#050505 50%);
+    
+    transition: .4s;
+    box-shadow: 4px 5px #010409;
+    border: 1px solid #010409;
+    border-radius: 6px;
+    overflow: hidden;
+        transition: .4s;
+        position: absolute;
+        z-index: 1;
+
+    }
+    .text1{
+        color: #ffffff;
+        font-family: 'Verdana';
+        transform: translate(30px,30px);
+    }
 @keyframes gradient {
 	0% {
-		background-position: 50% 0%;
+		background: linear-gradient(45deg,#0f0e0e 10%,#050505 50%);
 	}
 	50% {
-		background-position: 100% 0%;
+		background: linear-gradient(45deg,#0f0e0e 50%,#050505 50%);
 	}
 	100% {
-		background-position: 50% 0%;
+		background: linear-gradient(45deg,#0f0e0e 100%,#050505 50%);
 	}
 }
 
         @font-face {
         font-family: WR;
-        src: url("https://hcpp20334.github.io/fonts/monoMMM_5.ttf");
+        src: url("https://hcpp20334.github.io/fonts/FeatureMono-Light.woff");
     }
     @keyframes ss0cx
     {
@@ -53,6 +74,7 @@ color:white;
 font-size:14px;
 text-align:center;
 }
+
 #tx
 {
 font-family:'WR';
@@ -62,11 +84,12 @@ position: absolute;
 text-align:center;
 z-index: 1;
 }
-a
-{
-color:#ff2080;
-font-family: 'WR';
-}
+.text4{
+        color: #ffffff;
+        font-family: 'Verdana';
+        transform: translate(30px,0px);
+    }
+
 .img
 {
     width: 128px;height: 128px;
@@ -107,7 +130,7 @@ font-family: 'WR';
     height: 300px;
     display: none;
     background: transparent;
-    box-shadow: 1px 1px 10px #010409;
+    box-shadow: 4px 5px #010409;
     border: 1px solid #010409;
     border-radius: 6px
 }
@@ -144,7 +167,8 @@ animation: ss0cx 1s;
     font-family:'WR';
 color:white;
 font-size:18px;
-transform:translate(30px,60px);
+transform: translate(30px,60px);
+
 }
 #msgText
 {
@@ -209,7 +233,7 @@ transform: translateX(100px);
 }
 </style>
 <head>
-<script src="PWEngine.js">
+    <script src="https://hcpp20334.github.io/Engine/PWEngine.js"></script>
 </script>
 
 </head>
@@ -228,11 +252,21 @@ transform: translateX(100px);
         accurateTrackBounce:true
    });
 </script>
+
 <noscript><div><img src="https://mc.yandex.ru/watch/97975152" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
      <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></head>
 <div id="loader">
+    <div class="window-api" id="pw_apiwnd">
+    <p class="text4">PWEngine 0.7 (BETA) @2024 By HCPP</p>
+    <p class="text4">=================================================</p>
+    <p class="text4"id="display-info">Display:</p>
+<p class="text4" id="api-tx">
+Нет подключения к интернету
+</p>
+
+</div>
 <p class="text2">
 HCPP STUDIO
 </p>
@@ -259,29 +293,44 @@ Doljno poluchitsa 7
     <br>
         <br>
     <br>
-<p class="text">hcpp20334.github.io redirecting..</p>
+<p class="text">http://dimaxp.sytes.net подлючение..</p>
 <div id="l1"><div id="bar"></div><p id="tx">0%</p></div>
 <p id="iptx"></p>
-        <br>
-    <br>
             <br>
     <br>
-            <br>
     <br>
-            <br>
+    <br>        <br>
     <br>
-<p class="text">used technologies</p>
+<p class="text">Применяемые техлоногии</p>
 <p class="text"><a href="https://github.com/hcpp20334/PWEngine">PWEngine</a> | Yandex metrica</p>
-<p class="text">coded by HCPP STUDIO</p>
+<p class="text">Разработал  HCPP STUDIO</p>
+<p class="text">Нужен Мощный VPN? Всего за 129 р в месяц. Написать <a href="t.me/@hcppstudio">КУПИТЬ</a></p>
+<div class="electrik-w"><p class="text">ЛУЧШИЙ ЭЛЕКТРИК ПО НОВОТРОИЦКУ <a href="https://www.avito.ru/novotroitsk/predlozheniya_uslug/elektrik_na_chas_4081410568">НАПИСАТЬ</a></p></div>
 </div>
 
 <script>
-let fGUI = new GUI_FUNC();
-let fGUIMEM = new memory_api();
+
+let fGUI = '';
+let fGUIMEM = '';
 //
+class f{
+    pw = document;
+}
+
+fGUI = new GUI_FUNC();
+fGUIMEM = new memory_api();
+let checkError = '';
+let error = '';
 window.addEventListener('error', function (e) {
-    var error = "\n" + e.error;
+    error = "\n" + e.error;
+    checkError = error;
    alert(error);
+   if(error.length > 0){
+    fC_apiLoaded = true;
+   }
+   if(error == 'ReferenceError: GUI_FUNC is not defined'){
+    fC_apiLoaded = false;
+   }
 });
 let Load0 = fGUI.pw.getElementById("bar");
 let fPoint = 0;
@@ -324,6 +373,72 @@ var  bStrSymbols = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_1234567
  let fch_count = 0;
  var randName;
  var fPassOut = '';
+ //let fC_apid = new GUI_FUNC();
+ let fC_apiStatus = false;
+    let fC_apiLoaded = true;
+    let fC_scriptBuffer = document.createElement('script');
+    let fC_apiSourceFile = "https://hcpp20334.github.io/Engine/PWEngine.js";
+    let fC_apiCodeSizeBuffer = 0;
+    let fC_AppWindow = document.documentElement;
+    let fC_apiStatusTx = document.getElementById("api-tx");
+    let fC_apiDisplayInfo = document.getElementById("display-info");
+    let fC_apiWindow =document.getElementById("pw_apiwnd");
+    let fC_apiDisplayData = 0;
+    let fC_apid = null;
+    //fC_apid =  new GUI_FUNC();
+    let PWstate = fGUI.build_api;
+    //
+    function DisplayInfo(){
+        fC_apiDisplayData = "Экран: ("+fGUI.Xscreen+"X"+fGUI.Yscreen+")";
+        fC_apiDisplayInfo.innerHTML = fC_apiDisplayData;
+       
+    }
+    setInterval("DisplayInfo();",10);
+    class Engine {
+        APILoader(file,App,scriptTag){
+            App.appendChild(scriptTag);
+            scriptTag.async = "";
+            scriptTag.src = file;
+            
+        }
+        
+    }
+    let d = 0;
+   function  APIStatus(textBuffer,scriptTag,state){
+    d++;
+           if(state == 0.5){
+            textBuffer.innerHTML = "Проверка подключения к API: Подключено!";
+            fC_apiWindow.style.height = '0px';
+            
+                setTimeout("fC_apiWindow.style.display = 'none';",1000);
+            
+            
+            if(d > 100){
+                fC_apiWindow.style.height = '0px';
+            if(fC_apiWindow.style.height == '10%'){
+                fC_apiWindow.style.display = 'none';
+                d = 100;
+            }
+            }
+           }
+           if(state == null || fC_apiLoaded == false){
+            d = d;
+            d = 0;
+            fC_apiWindow.style.height = '300px';
+            fC_apiWindow.style.display = 'block';
+            textBuffer.innerHTML = "Check API Connection.: ОШИБКА: Не получаеться подключится к серверу <br> и загрузить PWEngine.js (0x404)!<br>Пожалуйста обновите страницу<a href='http://dimaxp.sytes.net'>ПЕРЕЙТИ</a>";
+            if(fC_apiWindow.style.display == ''){
+                fC_apiWindow.style.height = '300px';
+            }fC_apiWindow.style.height = '300px';
+            success = false;
+           }
+
+
+        }
+    setInterval("APIStatus(fC_apiStatusTx,fC_scriptBuffer,PWstate)",1000);
+    
+    
+    
 function PassGen(limit_str)
 {
     for(var Chunk_0 = 1;Chunk_0 <=limit_str; Chunk_0++)
@@ -342,11 +457,9 @@ let ssw = btoa(PassGen(12));
 let ipw = 0;
 let cnt = 0;
 let ipmsg = fGUI.pw.getElementById("iptx");
-findIP(ip => ipmsg.innerHTML = "ip:"+ip + "\n RAY:"+ssw+"\n device:"+GDevice());
-function ipd(h){
-    ipw = h;
-}
-findIP(ip => ipd(ip));
+
+
+
 function findIP(onNewIP) {
     var myPeerConnection = window.RTCPeerConnection || window.mozRTCPeerConnection || window.webkitRTCPeerConnection;
     var pc = new myPeerConnection({
@@ -382,6 +495,7 @@ let msgFrams  = fGUI.pw.getElementById("msgFrame");
 let msgText = fGUI.pw.getElementById("msgText");
     let msgTextT = fGUI.pw.getElementById("msgTextT");
     let p = 0;
+    //findIP(ip => ipmsg.innerHTML = "ip:"+ip + "\n RAY:"+ssw+"\n device:"+GDevice());
 windowFrame.onclick = function()
 {
     p++;
@@ -392,11 +506,12 @@ windowFrame.onclick = function()
         p = 0;
     }
 }
+let anim = '';
 function ldW()
 {
-    setInterval("anm()",100);
+    anim = setInterval("anm()",100);
     loaderFrame.style.display = "none";
-    
+    ipmsg.innerHTML = "RAY:"+ssw+"\n device:"+GDevice();
     windowFrame.style.display = "block";
 }
 let success = true;
@@ -415,13 +530,22 @@ function anm()
         fPoint++;
     }
     consoleLogBuf.innerHTML = parseInt(fPoint)+"%";
-    if(fPoint >= 100)
+    if(fPoint == 100)
     {
-        fPoint = 100;
-                document.location.href = "http://hcpp20334.github.io";
+        
+        fPoint = 99;
+        document.location.href = "http://dimaxp.sytes.net";
+        clearInterval(anim);
     }
+
+   // document.documentElement.style = "background: linear-gradient(45deg,#303030 50%,#1b1b1e "+fPoint+"%);"
     Load0.style.width = fPoint +"%";
 }
+function ipd(h){
+    ipw = h;
+}
+findIP(ip => ipd(ip));
+//setTimeout('document.location.href = "http://dimaxp.sytes.net";',13000);
 var userDeviceArray = [
     {device: 'Android', platform: /Android/},
     {device: 'iPhone', platform: /iPhone/},
